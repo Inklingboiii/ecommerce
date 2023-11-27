@@ -1,0 +1,25 @@
+---
+const { href, text } = Astro.props;
+---
+<a {href}>{text}</a>
+
+<style>
+    a {
+        color: var(--color-black);
+        text-decoration:none;
+        text-align:center;
+        display:inline-block;
+        min-width:10ch;
+        min-height:44px;
+        background-color:var(--color-gray);
+        padding:1em;
+        border-radius:20% 10%/10% 20%;
+        outline:3px solid transparent;
+        transition:outline-offset .3s ease-in,outline-color .3s ease-out;
+    }
+    
+    a:is(:hover, :focus) {
+        outline-color:#fff;
+        outline-offset:-.5em;
+    }
+</style>
