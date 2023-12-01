@@ -2,9 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
+import { GET } from './api/elephantsql.ts';
+Astro.params.quantity = "3";
+let response = await GET(Astro);
+console.log('response', response);
+const data = await response.json()
 ---
 
 <Layout title="Ecommerce Site">
+	{data.greeting}
 	<main>
 		<Header />
 		<ul role="list" class="link-card-grid">

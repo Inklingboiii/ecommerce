@@ -13,6 +13,7 @@
     "@astrojs/svelte": "^4.0.4",
     "@fontsource/poppins": "^5.0.8",
     "astro": "^3.6.1",
+    "pg": "^8.11.3",
     "svelte": "^5.0.0-next.1"
   }
 }
