@@ -1,4 +1,4 @@
-import * as pg from 'pg';
+import pg from 'pg';
 import type { APIContext, APIRoute } from 'astro'
 export const GET_PRODUCTS: APIRoute = async(context: APIContext) => {
   const { limit } = context.params;
