@@ -1,0 +1,16 @@
+---
+export const prerender = false;
+import { GET_PRODUCT, GET_CATEGORY } from "../../api/elephantsql";
+console.log('params', Astro.params)
+let response = await GET_PRODUCT(Astro);
+console.log('response', response);
+const { product } = await response.json();
+Astro.params.category_id = product.category_id;
+let categoryResponse = await GET_CATEGORY(Astro);
+const { category } = await categoryResponse.json();
+---
+<h1>{product.name}</h1>
+<p>{product.description}</p>
+<p>{product.price}</p>
+<p>{product.quantity}</p>
+<p>{category.name}</p>

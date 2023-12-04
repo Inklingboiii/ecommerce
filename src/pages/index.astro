@@ -6,13 +6,13 @@ import { GET_PRODUCTS } from '../api/elephantsql.ts';
 Astro.params.limit = "5";
 let response = await GET_PRODUCTS(Astro);
 console.log('response', response);
-const { data } = await response.json()
+const { products } = await response.json();
 ---
 
 <Layout title="Ecommerce Site">
 	<main>
 		<Header />
-		<ProductList products={data} client:load/>
+		<ProductList {products} client:load/>
 	</main>
 </Layout>
 
