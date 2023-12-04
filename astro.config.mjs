@@ -7,5 +7,8 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   output: 'hybrid',
   integrations: [svelte()],
-  adapter: cloudflare()
+  adapter: cloudflare(),
+  experimental: {
+    devOverlay: true,
+  }
 });
